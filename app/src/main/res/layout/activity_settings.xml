@@ -28,6 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:onClick="resetScore"
             android:text="Reset HighScore"
             android:textSize="34sp" />
 
@@ -37,7 +38,7 @@
             android:layout_weight="1" />
 
         <EditText
-            android:id="@+id/editTextText"
+            android:id="@+id/userNameEt"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -55,6 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:onClick="changeUsername"
             android:text="change username"
             android:textSize="34sp" />
 

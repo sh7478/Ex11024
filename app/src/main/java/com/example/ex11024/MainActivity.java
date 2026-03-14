@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         answer2Rb = findViewById(R.id.answer2Rb);
         answer3Rb = findViewById(R.id.answer3Rb);
         answer4Rb = findViewById(R.id.answer4Rb);
-        settings = getSharedPreferences("PREFS", MODE_PRIVATE);
+        settings = getSharedPreferences("GAME_PREFS", MODE_PRIVATE);
         rg = findViewById(R.id.rg);
         readFile();
         Collections.shuffle(questions);
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         else
         {
             questionTv.setText("Game over!");
-            //TODO put the 3 lines bellow in the onclick function of the new question button also in the options menu
+            //TODO putd the 3 lines bellow in the onclick function of the new question button also in the options menu
             SharedPreferences.Editor editor = settings.edit();
             editor.putInt("highscore", highscore);
             editor.commit();
