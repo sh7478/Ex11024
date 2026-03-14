@@ -1,20 +1,26 @@
 package com.example.ex11024;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -24,6 +30,7 @@ import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
     private final String FILENAME = "questions.txt";
+    private final String FILENAME_INTERNAL = "questions.txt";
     String txt = "";
     ArrayList<Question> questions = new ArrayList<>();
     TextView scoreTv, questionTv;
@@ -48,6 +55,40 @@ public class MainActivity extends AppCompatActivity {
         readFile();
         Collections.shuffle(questions);
         showQuestion();
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    public boolean onOptionsItemSelected(@NonNull MenuItem item)
+    {
+        int id = item.getItemId();
+        if(id == R.id.menuQuiz)
+        {
+            questionNumber = 0;
+            score = 0;
+            Collections.shuffle(questions);
+            showQuestion();
+        }
+        else if(id == R.id.menuQuestion)
+        {
+            Intent it = new Intent(this, New_Question_Tab.class);
+            startActivity(it);
+        }
+        else if(id == R.id.menuSett)
+        {
+            Intent it = new Intent(this, Settings.class);
+            startActivity(it);
+        }
+        else if(id == R.id.menuCred)
+        {
+            Intent it = new Intent(this, Credits.class);
+            startActivity(it);
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void showQuestion()
@@ -91,7 +132,6 @@ public class MainActivity extends AppCompatActivity {
         InputStreamReader iSR = new InputStreamReader(iS);
         BufferedReader bR = new BufferedReader(iSR);
         String line = "a";
-
         while(line != null) {
             line = bR.readLine();
             question = line;
@@ -160,3 +200,29 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
+
+
+/*
+try {
+            FileInputStream fIS = openFileInput(FILENAME_INTERNAL);
+            InputStreamReader iSRiNT = new InputStreamReader(fIS);
+            BufferedReader bRiNT = new BufferedReader(iSRiNT);
+            String line = "a";
+            while(line != null) {
+                line = bRiNT.readLine();
+                question = line;
+                String[] answers = new String[4];
+                for (int i = 0; i < 4; i++) {
+                    answers[i] = bRiNT.readLine();
+                }
+                line = bRiNT.readLine();
+                if(question != null) {
+                    questions.add(new Question(question, answers, findRightQuestion(answers)));
+                }
+            }
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+ */

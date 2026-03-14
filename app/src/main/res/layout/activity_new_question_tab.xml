@@ -24,7 +24,7 @@
             android:layout_weight="1" />
 
         <EditText
-            android:id="@+id/editTextText5"
+            android:id="@+id/eTQuestion"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -38,7 +38,7 @@
             android:layout_weight="1" />
 
         <EditText
-            android:id="@+id/editTextText"
+            android:id="@+id/eTAnswer"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -52,7 +52,7 @@
             android:layout_weight="1" />
 
         <EditText
-            android:id="@+id/editTextText2"
+            android:id="@+id/eTOption2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -66,7 +66,7 @@
             android:layout_weight="1" />
 
         <EditText
-            android:id="@+id/editTextText3"
+            android:id="@+id/eTOption3"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -80,7 +80,7 @@
             android:layout_weight="1" />
 
         <EditText
-            android:id="@+id/editTextText4"
+            android:id="@+id/eTOption4"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -98,6 +98,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:onClick="saveQuestion"
             android:text="Save"
             android:textSize="24sp" />
 

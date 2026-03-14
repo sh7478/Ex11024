@@ -1,16 +1,22 @@
 package com.example.ex11024;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import java.util.Collections;
 
 public class Settings extends AppCompatActivity {
 
@@ -29,6 +35,37 @@ public class Settings extends AppCompatActivity {
         editor = sp.edit();
         editor.putInt("highscore", 0);
         editor.commit();
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    public boolean onOptionsItemSelected(@NonNull MenuItem item)
+    {
+        int id = item.getItemId();
+        if(id == R.id.menuQuiz)
+        {
+            Intent it = new Intent(this, MainActivity.class);
+            startActivity(it);
+        }
+        else if(id == R.id.menuQuestion)
+        {
+            Intent it = new Intent(this, New_Question_Tab.class);
+            startActivity(it);
+        }
+        else if(id == R.id.menuSett)
+        {
+            userNameEt.setText("");
+        }
+        else if(id == R.id.menuCred)
+        {
+            Intent it = new Intent(this, Credits.class);
+            startActivity(it);
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public void changeUsername(View view) {
