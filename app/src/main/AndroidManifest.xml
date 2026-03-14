@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ex11024">
         <activity
+            android:name=".New_Question_Tab"
+            android:exported="false" />
+        <activity
             android:name=".Credits"
             android:exported="false" />
         <activity
