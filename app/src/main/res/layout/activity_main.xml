@@ -24,7 +24,7 @@
             android:layout_weight="5" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/questionTv"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="10"
@@ -37,30 +37,31 @@
             android:layout_weight="5" />
 
         <RadioGroup
+            android:id="@+id/rg"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="20">
 
             <RadioButton
-                android:id="@+id/radioButton"
+                android:id="@+id/answer1Rb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="answer1" />
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/answer2Rb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="answer2" />
 
             <RadioButton
-                android:id="@+id/radioButton3"
+                android:id="@+id/answer3Rb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="answer3" />
 
             <RadioButton
-                android:id="@+id/radioButton4"
+                android:id="@+id/answer4Rb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="answer4" />
@@ -71,13 +72,21 @@
             android:layout_height="0dp"
             android:layout_weight="5" />
 
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:onClick="submitAnswer"
+            android:text="submit" />
+
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/scoreTv"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="10"
             android:gravity="center"
-            android:text="Highscore And Score" />
+            android:text="Highscore and score" />
 
         <Space
             android:layout_width="match_parent"

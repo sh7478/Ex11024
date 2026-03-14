@@ -1,60 +1,60 @@
 What is the highest mountain in the world above sea level?
-A. Mount Kilimanjaro
-B. Mount Everest (Correct Answer)
-C. Mount Elbrus
-D. Mont Blanc
+Mount Kilimanjaro
+Mount Everest (Correct Answer)
+Mount Elbrus
+Mont Blanc
 @end@
 Which planet in our solar system is famous for its prominent rings?
-A. Mars
-B. Jupiter
-C. Saturn (Correct Answer)
-D. Venus
+Mars
+Jupiter
+Saturn (Correct Answer)
+Venus
 @end@
 What is the capital city of Japan?
-A. Beijing
-B. Seoul
-C. Tokyo (Correct Answer)
-D. Bangkok
+Beijing
+Seoul
+Tokyo (Correct Answer)
+Bangkok
 @end
 Which chemical element is represented by the symbol 'O' on the periodic table?
-A. Gold
-B. Oxygen (Correct Answer)
-C. Carbon
-D. Iron
+Gold
+Oxygen (Correct Answer)
+Carbon
+Iron
 @end@
 Who painted the famous artwork "Mona Lisa"?
-A. Vincent van Gogh
-B. Pablo Picasso
-C. Leonardo da Vinci (Correct Answer)
-D. Claude Monet
+Vincent van Gogh
+Pablo Picasso
+Leonardo da Vinci (Correct Answer)
+Claude Monet
 @end@
 On which continent is the Sahara Desert located?
-A. Asia
-B. South America
-C. Africa (Correct Answer)
-D. Australia
+Asia
+South America
+Africa (Correct Answer)
+Australia
 @end@
 How many sides does a hexagon have?
-A. 5
-B. 6 (Correct Answer)
-C. 7
-D. 8
+5
+6 (Correct Answer)
+7
+8
 @end@
 What is the largest ocean in the world by surface area?
-A. Atlantic Ocean
-B. Indian Ocean
-C. Arctic Ocean
-D. Pacific Ocean (Correct Answer)
+Atlantic Ocean
+Indian Ocean
+Arctic Ocean
+Pacific Ocean (Correct Answer)
 @end@
 Which of the following is considered the fastest land animal in the world?
-A. Lion
-B. Deer
-C. Cheetah (Correct Answer)
-D. Horse
+Lion
+Deer
+Cheetah (Correct Answer)
+Horse
 @end@
 Which central organ in the human body functions as a pump to push blood throughout the body?
-A. Lungs
-B. Liver
-C. Brain
-D. Heart (Correct Answer)
+Lungs
+Liver
+Brain
+Heart (Correct Answer)
 @end@

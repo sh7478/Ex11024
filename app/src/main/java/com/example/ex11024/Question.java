@@ -3,12 +3,12 @@ package com.example.ex11024;
 public class Question {
     private String question;
     private String[] answers;
-    private int correctAnswerIndex;
+    private String correctAnswer;
 
     public Question(String question, String[] answers, int correctAnswerIndex) {
         this.question = question;
         this.answers = answers;
-        this.correctAnswerIndex = correctAnswerIndex;
+        this.correctAnswer = answers[correctAnswerIndex];
     }
 
     public String getQuestion() {
@@ -27,11 +27,11 @@ public class Question {
         this.answers = answers;
     }
 
-    public int getCorrectAnswerIndex() {
-        return correctAnswerIndex;
+    public String getCorrectAnswer() {
+        return correctAnswer;
     }
 
-    public void setCorrectAnswerIndex(int correctAnswerIndex) {
-        this.correctAnswerIndex = correctAnswerIndex;
+    public void setCorrectAnswer(String correctAnswer) {
+        this.correctAnswer = correctAnswer;
     }
 }
