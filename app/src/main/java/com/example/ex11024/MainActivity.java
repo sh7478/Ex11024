@@ -1,6 +1,7 @@
 package com.example.ex11024;
 
 import android.app.AlertDialog;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<Question> questions = new ArrayList<>();
     TextView scoreTv, questionTv;
     RadioButton answer1Rb, answer2Rb, answer3Rb, answer4Rb;
+    SharedPreferences settings;
     RadioGroup rg;
     int questionNumber = 0;
     int score = 0;
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         answer2Rb = findViewById(R.id.answer2Rb);
         answer3Rb = findViewById(R.id.answer3Rb);
         answer4Rb = findViewById(R.id.answer4Rb);
+        settings = getSharedPreferences("PREFS", MODE_PRIVATE);
         rg = findViewById(R.id.rg);
         readFile();
         Collections.shuffle(questions);
@@ -61,6 +64,10 @@ public class MainActivity extends AppCompatActivity {
         else
         {
             questionTv.setText("Game over!");
+            //TODO put the 3 lines bellow in the onclick function of the new question button also in the options menu
+            SharedPreferences.Editor editor = settings.edit();
+            editor.putInt("highscore", highscore);
+            editor.commit();
         }
     }
 
