@@ -77,7 +77,7 @@ public class New_Question_Tab extends AppCompatActivity {
         String option2 = eTOption2.getText().toString();
         String option3 = eTOption3.getText().toString();
         String option4 = eTOption4.getText().toString();
-        if(question != null && answer != null && option2 != null && option3 != null && option4 != null)
+        if(!question.isEmpty() && !answer.isEmpty() && !option2.isEmpty() && !option3.isEmpty() && !option4.isEmpty())
         {
             try{
                 FileOutputStream fOS = openFileOutput(FILENAME, MODE_PRIVATE);
@@ -100,11 +100,12 @@ public class New_Question_Tab extends AppCompatActivity {
             AlertDialog ad = adb.create();
             ad.show();
         }
+        finish();
     }
 
     private String formatQuestion(String question, String answer, String option2, String option3, String option4) {
         String formated = question + "\n";
-        formated += answer + "\n";
+        formated += answer + "(Correct Answer)\n";
         formated += option2 + "\n";
         formated += option3 + "\n";
         formated += option4 + "\n";
