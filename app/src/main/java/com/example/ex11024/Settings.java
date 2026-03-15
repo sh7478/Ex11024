@@ -28,7 +28,7 @@ public class Settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
         userNameEt = findViewById(R.id.userNameEt);
-        sp = getSharedPreferences("GAME_PREFS", MODE_PRIVATE);
+        sp = getSharedPreferences("GAME_PREFS", MODE_APPEND);
     }
 
     public void resetScore(View view) {

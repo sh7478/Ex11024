@@ -28,6 +28,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
+/**
+ * המערכת המרכזית של האפליקציה המנהלת את לוגיקת המשחק, הצגת השאלות וחישוב הניקוד.
+ * <p>
+ * מחלקה זו אחראית על קריאת השאלות מקבצים (Raw ו-Internal Storage),
+ * ניהול מצב המשחק, ועדכון ממשק המשתמש בהתאם להתקדמות.
+ *
+ * @author Your Name
+ * @version 1.0
+ * @since 2024
+ */
 public class MainActivity extends AppCompatActivity {
     private final String FILENAME = "questions.txt";
     private final String FILENAME_INTERNAL = "questions.txt";
@@ -41,6 +51,12 @@ public class MainActivity extends AppCompatActivity {
     int score = 0;
     int highscore = 0;
 
+    /**
+     * פעולה המתבצעת בעת יצירת ה-Activity.
+     * מאתחלת את רכיבי הממשק, טוענת שאלות מהקבצים ומציגה את השאלה הראשונה.
+     *
+     * @param savedInstanceState מצב שמור של ה-Activity (אם קיים).
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,11 +76,23 @@ public class MainActivity extends AppCompatActivity {
         showQuestion();
     }
 
+    /**
+     * יוצר את תפריט האפשרויות של האפליקציה.
+     *
+     * @param menu האובייקט של התפריט אליו מנפחים את ה-XML.
+     * @return true אם התפריט נוצר בהצלחה.
+     */
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
+    /**
+     * מטפל בלחיצות על פריטים בתפריט האפשרויות.
+     *
+     * @param item הפריט שנבחר מהתפריט.
+     * @return true אם הטיפול בפריט הסתיים.
+     */
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         saveHighscore();
         int id = item.getItemId();
@@ -86,6 +114,9 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * שומר את הניקוד הגבוה ביותר ב-SharedPreferences.
+     */
     private void saveHighscore()
     {
         SharedPreferences.Editor editor = settings.edit();
@@ -93,6 +124,11 @@ public class MainActivity extends AppCompatActivity {
         editor.commit();
     }
 
+    /**
+     * מציגה את השאלה הנוכחית על המסך.
+     * הפעולה מערבבת את סדר התשובות ומעדכנת את רכיבי ה-RadioButton.
+     * אם נגמרו השאלות, מציגה הודעת סיום ושומרת ניקוד.
+     */
     private void showQuestion() {
         if (questionNumber < questions.size()) {
             Collections.shuffle(Arrays.asList(questions.get(questionNumber).getAnswers()));
@@ -108,6 +144,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * מנקה את התגית "(Correct Answer)" מטקסט התשובה לפני הצגתו למשתמש.
+     *
+     * @param answer טקסט התשובה הגולמי.
+     * @return טקסט התשובה נקי מהתגית.
+     */
     private String cleanAnswer(String answer) {
         if (answer.contains("(Correct Answer)")) {
             return answer.substring(0, answer.length() - 16);
@@ -184,6 +226,9 @@ public class MainActivity extends AppCompatActivity {
                     questions.add(new Question(question, answers, findRightQuestion(answers)));
                 }
             }
+            bRraw.close();
+            iSRraw.close();
+            iS.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -208,6 +253,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             }
+            bRInt.close();
+            iSRInt.close();
+            fIS.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
